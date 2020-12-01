@@ -118,5 +118,14 @@ if __name__ == "__main__":
         
 
 
-"""     Updates 
+"""     TASKS
+    1. Generate Report
+"""
+
+"""     REPORT STRUCTURE 
+
+    . GET Parameters 
+    . Context Distribution 
+    . Source Code Analysis
+
 """
