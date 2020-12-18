@@ -71,3 +71,7 @@ class verify_attack:
         # self.Text.write_directly('\n\n\t There is no mitigation for Single Quotes here \n')
         # self.Text.write_directly(str(context))
         return False
+    
+    def toString(self):
+        return 'VerifyAttack'
+

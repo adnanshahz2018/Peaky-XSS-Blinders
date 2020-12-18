@@ -6,7 +6,8 @@ import re
 from WriteTextFile import write_text_file
 
 class source_code_analysis:
-    double_quotes = single_quotes = lessthan_sign = forwardslash = presence = False
+    double_quotes = single_quotes = lessthan_sign = False 
+    forwardslash = presence = False
     Text = None
 
     def display(self,context):
@@ -88,14 +89,11 @@ class source_code_analysis:
     def double(self,context): 
         pattern1 = re.compile(r'(?!=)(?!:)\s?"[\s]*xyz')
         falsepositive = re.compile(r'[=:]\s?"\s?xyz')
-
         value = pattern1.findall(context)
         impure = falsepositive.findall(context)
-
         if value and not impure:        
             # print('\nFiltering Value = ',value)
             return False    # No Filtering 
-
         return True     # Filtering is PRESENT
 
     def single(self, context):
@@ -104,7 +102,6 @@ class source_code_analysis:
         if value:        
             # print('\nFiltering Value = ',value)
             return False    # No Filtering 
-
         return True     # Filtering is PRESENT
     
     def less_than(self, context): 
@@ -113,7 +110,6 @@ class source_code_analysis:
         if value:        
             # print('\nhtml Filtering Value = ',value)
             return False    # No Filtering 
-        
         return True     # Filtering is PRESENT
   
     def check_forwardslash(self, context):
@@ -174,7 +170,6 @@ class source_code_analysis:
         pattern = re.compile(r'[=]\s?\{?\"[@\=*!~|$_,}+*\\#*{*\s^*?\[\]*(*)*\/*=.*\w*&*;*\-*%*\d*]*\"?\s?[xX][yY][zZ][@\*!~|$_,}+*\\#*\"{*\s^*?\[\]*(*)*\/*.*\w*&*;*\-*%*\d*]*\s?\'?\s?' + re.escape(attack))
         pattern1 = re.compile(r'[,]\s?\"[@\*!~|$_,}+*\\#*\"{*\s^*?\[\]*(*)*\/*.*\w*&*;*\-*%*\d*]*\s?\'\s?'+ re.escape(attack))
         pattern2 = re.compile(r'[:]\s?\"[@\*!~|$_,}+*\\#*\"{*\s^*?\[\]*(*)*\/*.*\w*&*;*\-*%*\d*]*\s?\'\s?'+ re.escape(attack))
-
         value = pattern.findall(str(context))
         if value:    
             # self.Text.write_directly("\tScript-Single\tEncapsulated With Double Quotes: Can't Break the Context\n")
@@ -187,11 +182,12 @@ class source_code_analysis:
         if value:    
             # self.Text.write_directly("\tScript-Single\tEncapsulated With Double Quotes: Can't Break the Context\n")
             return True
-
         # self.Text.write_directly('\n\n\t There is no mitigation for Single Quotes here \n')
         # self.Text.write_directly(str(context))
         return False
 
+    def toString(self):
+        return 'SourceCodeAnalysis'
 
 if __name__ == "__main__":
     print( '{Context_Encoding}')

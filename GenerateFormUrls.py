@@ -128,6 +128,8 @@ class generate_form_urls_with_payloads:
         else:
             return False 
 
+    def toString(self):
+        return 'GenerateFormUrls'
 
 if __name__ == '__main__':
     links = list()
@@ -221,16 +223,10 @@ if __name__ == '__main__':
     print(a)
     print(b)
 
-""" 
------------------------------- Any Ideas or Algorithm, Post'em Here -----------
-
-_________________________________________________________________________________
-
+"""         Any Ideas or Algorithm, Post'em Here 
 Failures:
 1. https://www.yesasia.com/global/search/xyz/0-0-0-q.xyz_bpt.48-en/list.html
 2. https://www.novica.com/xyz/s/
 3. https://www.fragonard.com/en/search/xyz
-
-_________________________________________________________________________________
 
 """

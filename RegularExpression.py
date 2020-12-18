@@ -164,6 +164,9 @@ class regular_expression:
         value = attr.findall(self.pagesource) # + html.findall(self.pagesource)
         return value
 
+    def toString(self):
+        return 'RegularExpression'
+
 if __name__ == "__main__":
     
     data = "<div class='col-md-12 searchresults'>Displaying results for <span style='color:red;'><q><img src=x onerror='alert`1`'></q></span></div>	"

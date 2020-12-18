@@ -74,7 +74,10 @@ class url_contains_params:
         form_data = data[:-1]
         return form_data
 
+    def toString(self):
+        return 'UrlContainsParams'
 
+        
 if __name__ == "__main__":
 
 #   http://db.etree.org/shnlist.php?artist&artist_group_key=1&year=

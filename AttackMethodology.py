@@ -37,6 +37,9 @@ class attack_methodology:
         
         return False, None
 
+    def toString(self):
+        return 'AttackMethodology'
+
 if __name__ == "__main__":
     AM = attack_methodology()
     print('{AttackMethodology}')

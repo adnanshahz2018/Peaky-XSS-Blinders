@@ -11,7 +11,7 @@ class web_request:
     url = ''
     form_method = ''
 
-    def __init__(self,url,method):
+    def initialize(self,url,method):
         self.url = url 
         self.form_method = method.lower()
         
@@ -58,6 +58,9 @@ class web_request:
         except:
             print('\n *[Urrlib Failure ]*') 
             return ''
+
+    def toString(self):
+        return "WebRequest"
 
 if __name__ == "__main__":
     

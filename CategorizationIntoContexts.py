@@ -43,7 +43,9 @@ class categorization_into_contexts:
         print('SAME URI ['          , len(same_urls)    ,  ']\n' , same_urls)
         
         print('--------------------------------------------------------------------------------------------------------\n')
-        
+    
+    def toString(self):
+        return 'CategorizationintoContexts'
 
 if __name__ == "__main__":
     print('{FindContext}')
