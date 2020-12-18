@@ -92,7 +92,7 @@ class regular_expression:
         value += p5.findall(self.pagesource) + p6.findall(self.pagesource) + p7.findall(self.pagesource)+ p8.findall(self.pagesource)
         return value 
 
-# >>>>>>>>>>>>>>>>  These functions Find the Exact payload reflection after attacking the websites >>>>>>>>>>>>>>>>>>>
+# >>>>>>>>>>>>>>>>  These functions Find the Exact payload reflection after attacking the websites <<<<<<<<<<<<<<<<<<<
 
     def RegExpSameAttribute(self):
         p = re.compile(r'<\w{1,10}' + self.a + r'\s?' + self.a + re.escape(self.payload) + self.a + r'\/?>')
