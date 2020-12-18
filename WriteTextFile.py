@@ -8,17 +8,13 @@ import BaseURL
 
 class write_text_file:
     payload = HarmlessTestString.harmless_test_string
-    url = ''
-    path = ''
     filename = ''
-    # folder = 'drive/My Drive/SQL_Vulnerable/'
-    # folder = 'TuningData/'
+    path = ''
+    url = ''
 
     def __init__(self, url):
         self.url = url
         base = BaseURL.base_url(url)
-        # self.folder = base + '/'
-        # self.folder = self.core_url(self.url) + '/'
         self.filename = self.get_filename()
         self.createfile(self.filename)
 
@@ -29,10 +25,9 @@ class write_text_file:
         return core[0]
 
     def createfile(self, filename):
-        # path = self.folder + filename + '.txt'
         self.path = filename + '.txt'
         textfile = open(self.path, "w")
-        textfile.write(f'\tWebsite-URL =  "{self.url}"\n\n')
+        textfile.write(f'\tWebsite-URL: "{self.url}"\n\n')
         textfile.close()
 
     def get_filename(self):
@@ -96,19 +91,6 @@ class write_text_file:
         textfile.write(breakline + '\n')
         textfile.close()
 #    
-    def write_response(self, filename, data):
-        path = '' +  filename + '.txt'
-        textfile = open(path, "w+")
-        # print(data)
-        textfile.write(str(data))
-        textfile.close()
-
-    def write_links(self, filename, links):
-        path = '' +  filename + '.txt'
-        textfile = open(path, "w+")
-        for data in links:  textfile.write(str(data) + '\n')
-        textfile.close()
-    
     def write_postforms(self, posturl, r, presence):
         breakline = "\n__________________________________________________________________________________"
         print('\n Writing Post Form Data to TEXT_FILE\n')
@@ -132,17 +114,58 @@ class write_text_file:
         textfile.close()
         
     def write_encoding(self, Context, presence, double_quotes, single_quotes, lessthan_sign, forward_slash):
-        return
         filename = self.get_filename()
-        path = self.folder + filename + '.txt'
+        path = filename + '.txt'
         textfile = open(path, "a")
-        if Context is None: 
-            textfile.write('\n\n\t\t \t\tENCODING SUMMARY \n\t   \t  Presence\t\t"' + "\t\t'" + '\t\t<' + "\t\t/ \n")
-            return
-        textfile.write('Mitigation        "' + "\t'" + '\t<' + "\t/ \n")
-        textfile.write(Context +':\t\t' + str(double_quotes) +'\t')
-        textfile.write( str(single_quotes) +'\t'+ str(lessthan_sign) +'\t'+ str(forward_slash) + '\n' )
+        textfile.write('______________________________________________\n')
+        textfile.write('SpecialChars     "')
+        textfile.write("\t\t'" + '\t\t<' + "\t\t/ \n")
+        textfile.write(Context + ':\t\t\t')
+        textfile.write(str(double_quotes) + '\t')
+        textfile.write(str(single_quotes) + '\t')
+        textfile.write(str(lessthan_sign) + '\t')
+        textfile.write(str(forward_slash) + '\n')
         textfile.close()
+
+    def write_attack_payloads(self, payloads):
+        filename = self.get_filename()
+        path = filename + '.txt'
+        textfile = open(path, "a")
+        textfile.write('Payloads:\n')
+        count = 1
+        for payload in payloads:
+            textfile.write('\t' + str(count) + '. ' + str(payload) + '\n')
+            count += 1
+        textfile.close()
+    
+    def write_attack_url(self, url):
+        filename = self.get_filename()
+        path = filename + '.txt'
+        textfile = open(path, "a")
+        textfile.write('Attack URL: \n')
+        textfile.write('\t' + str(url) + '\n')
+        textfile.close()
+
+    def write_status(self, status):
+        filename = self.get_filename()
+        path = filename + '.txt'
+        textfile = open(path, "a")
+        textfile.write('Status:\n')
+        textfile.write('\t' + status)
+        textfile.close()
+
+    def write_detection(self, detection):
+        filename = self.get_filename()
+        path = filename + '.txt'
+        textfile = open(path, "a")
+        textfile.write('Payload Detection: \n')
+        for d in detection:
+            textfile.write('\t' + str(d) + '\n')
+        textfile.close()
+
+
+    def toString(self):
+        return "WriteTextFile"
 
 
 if __name__ == "__main__":
