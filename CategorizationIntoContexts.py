@@ -1,9 +1,7 @@
 
-import os 
+# Local imports
 from RegularExpression import regular_expression
-from WriteTextFile import write_text_file
 import HarmlessTestString
-# from WriteExcelFile import write_excel_file
 
 class categorization_into_contexts:
     R = None 

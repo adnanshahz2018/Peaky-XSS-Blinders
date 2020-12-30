@@ -1,16 +1,12 @@
-
+# Python imports
 import re
-import os
-import requests
-from requests import Request, Session
 from bs4 import BeautifulSoup
 
 # Local imports
-from CategorizationIntoContexts import categorization_into_contexts
-from WebRequest import web_request
 import HarmlessTestString
 
-class generate_form_urls_with_payloads:
+
+class generate_form_urls_with_test_strings:
     payload = HarmlessTestString.harmless_test_string
     complete_link = original_url = ''
     formvalues = {}
@@ -53,7 +49,6 @@ class generate_form_urls_with_payloads:
         return links
         
     def check_get_urls(self, form):
-        # find = categorization_into_contexts()
         if not form: 
             return False, ['']
         fields = form.find_all('input')
@@ -174,12 +169,6 @@ if __name__ == '__main__':
     # link = 'https://www.digitaltrends.com/'         # Does Not work with payload having special chars { ', ", <, /}, No post forms
     # link = 'https://www.engadget.com/'              # No <form with method='get', has post and adding payload works, gives results
 
-    # links.append( '' )
-    # links.append( '' )
-    # links.append( '' )
-    # links.append( '' )
-    # links.append( '' )   
-
     # links.append( 'https://www.wayfair.com/' )            # Fails to capture the GET Form
     # links.append( 'https://www.lowes.com/' )              # Request Times Out / Fails
     # links.append( 'https://www.uncommongoods.com/' )           # No <form with method='get' 
@@ -218,7 +207,7 @@ if __name__ == '__main__':
     link = 'https://www.piceramic.com'                #Done Well
 
     # -------------------------Creating the Object-------------------------------
-    G = generate_form_urls_with_payloads()
+    G = generate_form_urls_with_test_strings()
     a , b = G.start_search(link)
     print(a)
     print(b)

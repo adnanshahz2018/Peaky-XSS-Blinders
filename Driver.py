@@ -1,6 +1,8 @@
 
 # Python imposrts
-import os
+from re import template
+import sys
+import argparse
 
 # Local imports 
 from Factory import Factory
@@ -10,31 +12,72 @@ from AttackMethodology import attack_methodology
 from UrlContainsParams import url_contains_params
 from AttackWithPayloads import attack_with_payloads
 from SourceCodeAnalysis import source_code_analysis
-from GenerateFormUrls import generate_form_urls_with_payloads
+from GenerateFormUrlsWithTestStrings import generate_form_urls_with_test_strings
 from CategorizationIntoContexts import categorization_into_contexts
 
-#  Program Input is a URL or List of URLs
-program_input_url_list = ['https://www.zentechnologies.com', 'https://www.kickstarter.com']
+url_list = ['https://www.zentechnologies.com', 'https://www.kickstarter.com']
+attackpayloads = []
+results = []
 
+
+def display_params(params):
+    print('\n GET Parmaeters:')
+    i = 1
+    for param in params:
+        print(i, '. ', param)
+        i += 1
+    print()
+
+def display_payloads(payloads):
+    print('\n Payloads Used For Attacks:\n')
+    i = 1
+    templist = []
+    for payload in payloads:
+        if payload not in templist:
+            print(i, '. ', payload)
+            templist.append(payload)
+    print()
+    
 def user_input():
     input_url = input('Please Enter the URL: ')
     return input_url
 
+def cli_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-url', help="Input Website Url")
+    parser.add_argument('-detail', help=""" all = Show Complete Details,
+    forms = Find Forms, 
+    getparams = Find GET Parameters, 
+    contextvalues = Show the TestString Appearances in 4 Contexts
+    getpayloads = Show Attack Payloads Used,
+    encoding = Show Encoding Summary,
+    attacks = Attack Details,
+    results = Show Results
+    """)
+    # parser.add_argument('', dest='', help='')
+    args = parser.parse_args()
+    return args
+
 
 if __name__ == "__main__":
+    url_has_params = False  # if url contains get-parameters, it will be changed to 'True'
+    web_url = url_list[0]
+    args = cli_arguments()
+    web_url = args.url
+    if web_url:
+        print('Website URL = ', web_url)
+    else:
+        print("\n Please provide a url OR use '-h' flag for help\n")
+        sys.exit()
 
-    url_has_params = False
-    web_url = program_input_url_list[0]
     # web_url = user_input()
-    while not web_url:
-        web_url = user_input()
-
+    while not web_url:  web_url = user_input()
 
     """                         """
     """     Creating Objects    """    
     """                         """
 
-    # Factory -> It is the  "Object Storage"  for this program
+    # Factory -> It is the  "Object Storage"  for the objects created in this program
     # Object/instance created of any class is available through Factory
     factory = Factory.get_instance()   
 
@@ -48,7 +91,7 @@ if __name__ == "__main__":
     factory.add_item(Write_To_TextFile, Write_To_TextFile.toString())
     
     # GenerateFormUrls -> GenerateFormUrlsWithTestStrings -> Creates links with parameters and Test Strings
-    GetFormParameters = generate_form_urls_with_payloads()
+    GetFormParameters = generate_form_urls_with_test_strings()
     factory.add_item(GetFormParameters, GetFormParameters.toString())
 
     # CategorizationintoContexts -> Categorizes the Response in 4 Contexts (Attribute, HTML, Script, URL)
@@ -88,8 +131,13 @@ if __name__ == "__main__":
         """ 
         get_params, links = GetFormParameters.start_search(web_url, page_source)
 
+    if str(args.detail).__contains__('getparams') or str(args.detail).__contains__('all'):
+        display_params(get_params)
+    
 
-    """     STEP-3: Submit GET-Forms / Links to Web Server and Collect Response 
+    """     STEP-3: 
+    Submit GET-Forms/Links to the Web Server 
+    Collect Response 
     """
 
     if not links: 
@@ -101,12 +149,15 @@ if __name__ == "__main__":
 
         """ STEP-4: Categorization of Response into 4 Contexts (Attribute, HTML, Script, URL)
         """
-        attr_context, html_context, script_context, url_context = Contexts.find_contexts( page_source)
+        attr_context, html_context, script_context, url_context = Contexts.find_contexts(page_source)
+        if str(args.detail).__contains__('contextvalues') or str(args.detail).__contains__('all'):
+            Contexts.display(attr_context, html_context, script_context, url_context, '', '', '', '')
         
         """ *** Saving Context-Data in Text File
         """
         Write_To_TextFile.write_contexts(link, attr_context, html_context, script_context, url_context)
 
+            
         """ STEP-5: Source Code Analysis (SCA)
             STEP-6: Attack w.r.t SCA  
             STEP-7: Verify Attack
@@ -128,7 +179,7 @@ if __name__ == "__main__":
 
             """ Attacking with Real Payloads
             """
-            AP.attack(attack_flag, attack_payloads, link, 'ATTR', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
+            attack_payloads += AP.attack(attack_flag, attack_payloads, link, 'ATTR', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
 
         # HTML Context
         for html in html_context:   
@@ -146,7 +197,7 @@ if __name__ == "__main__":
 
             """ Attacking with Real Payloads
             """
-            AP.attack(attack_flag, attack_payloads, link, 'HTML', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
+            attack_payloads += AP.attack(attack_flag, attack_payloads, link, 'HTML', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
         
         # Script Context
         for script in script_context:   
@@ -164,7 +215,7 @@ if __name__ == "__main__":
             
             """ Attacking with Real Payloads
             """
-            AP.attack(attack_flag, attack_payloads, link, 'SCRIPT', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
+            attack_payloads += AP.attack(attack_flag, attack_payloads, link, 'SCRIPT', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
         
         # URL Context
         for url in url_context:  
@@ -182,7 +233,10 @@ if __name__ == "__main__":
             
             """ Attacking with Real Payloads
             """
-            AP.attack(attack_flag, attack_payloads, link, 'URL', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
+            attack_payloads += AP.attack(attack_flag, attack_payloads, link, 'URL', presence, double_quotes, single_quotes, lessthan_sign, forwardslash)
+    
+    if str(args.detail).__contains__('getpayloads') or str(args.detail).__contains__('all'):
+        display_payloads(attack_payloads)
         
     print('Objects Created During The Execution Of Program \n')    
     count = 1
@@ -190,7 +244,6 @@ if __name__ == "__main__":
         print( str(count) + '. ' + item.get_description())
         count += 1
     print()
-
 
 
 """     TASKS
