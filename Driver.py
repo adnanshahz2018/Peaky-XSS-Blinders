@@ -19,7 +19,6 @@ url_list = ['https://www.zentechnologies.com', 'https://www.kickstarter.com']
 attackpayloads = []
 results = []
 
-
 def display_params(params):
     print('\n GET Parmaeters:')
     i = 1
@@ -46,7 +45,6 @@ def cli_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-url', help="Input Website Url")
     parser.add_argument('-detail', help=""" all = Show Complete Details,
-    forms = Find Forms, 
     getparams = Find GET Parameters, 
     contextvalues = Show the TestString Appearances in 4 Contexts
     getpayloads = Show Attack Payloads Used,
@@ -70,13 +68,9 @@ if __name__ == "__main__":
         print("\n Please provide a url OR use '-h' flag for help\n")
         sys.exit()
 
-    # web_url = user_input()
-    while not web_url:  web_url = user_input()
-
     """                         """
     """     Creating Objects    """    
     """                         """
-
     # Factory -> It is the  "Object Storage"  for the objects created in this program
     # Object/instance created of any class is available through Factory
     factory = Factory.get_instance()   

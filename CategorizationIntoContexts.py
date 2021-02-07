@@ -23,25 +23,19 @@ class categorization_into_contexts:
         
         # Display the Context Values on the Console 
         # self.display(attrs, htmls, scripts, urls, same_attrs, same_htmls, same_scripts, same_urls)
-
         return attrs, htmls, scripts, urls
-    
 
     def display(self, attrs, htmls, scripts, urls, same_attrs, same_htmls, same_scripts, same_urls):
-        print('-------------------------------------------------------------------------------------------------------\n')
-        
         print('Attribute Context [' , len(attrs)        ,  ']\n' , attrs)
         print('HTML Context ['      , len(htmls)        ,  ']\n' , htmls)
         print('Script Context ['    , len(scripts)      ,  ']\n' , scripts)
         print('URI Context ['       , len(urls)         ,  ']\n' , urls)
         
-        print('SAME Attribute ['    , len(same_attrs)   ,  ']\n' , same_attrs)
-        print('SAME HTML ['         , len(same_htmls)   ,  ']\n' , same_htmls)
-        print('SAME Script ['       , len(same_scripts) ,  ']\n' , same_scripts)
-        print('SAME URI ['          , len(same_urls)    ,  ']\n' , same_urls)
+        # print('SAME Attribute ['    , len(same_attrs)   ,  ']\n' , same_attrs)
+        # print('SAME HTML ['         , len(same_htmls)   ,  ']\n' , same_htmls)
+        # print('SAME Script ['       , len(same_scripts) ,  ']\n' , same_scripts)
+        # print('SAME URI ['          , len(same_urls)    ,  ']\n' , same_urls)
         
-        print('--------------------------------------------------------------------------------------------------------\n')
-    
     def toString(self):
         return 'CategorizationintoContexts'
 
