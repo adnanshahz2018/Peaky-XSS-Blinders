@@ -1,6 +1,11 @@
 
+# python imports
+from selenium import webdriver
+
+
 class Factory:
     __instance = None
+    browser = None
     item_list = []
     item_key = 0
 
@@ -29,6 +34,15 @@ class Factory:
     
     def get_item_list(self):
         return self.item_list
+
+    def get_browser(self):
+        if self.browser is None:
+            self.browser = webdriver.Chrome('chromedriver.exe') 
+            self.browser.set_window_position(0,0)
+            self.browser.maximize_window()
+            return self.browser
+        else:
+            return self.browser
 
 
 class Item:

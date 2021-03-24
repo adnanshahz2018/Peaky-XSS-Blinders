@@ -1,9 +1,7 @@
 
 import os
-import xlwt
 import xlsxwriter 
 import openpyxl as op
-from xlwt import Workbook
 
 class write_excel_file:
     filename = ''

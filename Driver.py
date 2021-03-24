@@ -136,10 +136,13 @@ if __name__ == "__main__":
 
     if not links: 
         print( '\n No Get Parameters  \n')
-
+    textcount = 0
     for link in links:
+        textcount +=1
         Web.initialize(link, 'get')
         page_source = Web.get_source()
+        with open(f'source_{textcount}.txt', 'w+') as text:
+            text.write(page_source)
 
         """ STEP-4: Categorization of Response into 4 Contexts (Attribute, HTML, Script, URL)
         """
@@ -231,11 +234,12 @@ if __name__ == "__main__":
     
     if str(args.detail).__contains__('getpayloads') or str(args.detail).__contains__('all'):
         display_payloads(attack_payloads)
-        
-    print('Objects Created During The Execution Of Program \n')    
+    display_payloads(attack_payloads)
+    
+    # print('Objects Created During The Execution Of Program \n')    
     count = 1
     for item in factory.get_item_list(): 
-        print( str(count) + '. ' + item.get_description())
+        # print( str(count) + '. ' + item.get_description())
         count += 1
     print()
 

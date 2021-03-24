@@ -9,7 +9,7 @@
 import HarmlessTestString
 
 
-#  Example URL: www.abc.com/index.php?value="new"
+#  EXAMPLE URL: www.abc.com/index.php?value="new"
 
 class url_contains_params:
     payload = HarmlessTestString.harmless_test_string
@@ -79,7 +79,5 @@ class url_contains_params:
 
         
 if __name__ == "__main__":
-
+    print('UrlContainsParams')
 #   http://db.etree.org/shnlist.php?artist&artist_group_key=1&year=
-
-    pass

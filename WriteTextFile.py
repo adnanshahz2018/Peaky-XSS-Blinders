@@ -1,6 +1,6 @@
 
+# python imports
 import re
-import os 
 
 # Local imports
 import HarmlessTestString
@@ -68,7 +68,7 @@ class write_text_file:
         # path = self.folder + filename + '.txt'
         textfile = open(self.path, "a", encoding='utf-8')
 
-        print( "\nWriting Data in => ", self.filename + '.txt' , '\n' )
+        # print( "\nWriting Data in => ", self.filename + '.txt' , '\n' )
         textfile.write('_______________________________________________________________________________________________________\n')
         textfile.write(link + "\n")
         
@@ -162,7 +162,6 @@ class write_text_file:
         for d in detection:
             textfile.write('\t' + str(d) + '\n')
         textfile.close()
-
 
     def toString(self):
         return "WriteTextFile"

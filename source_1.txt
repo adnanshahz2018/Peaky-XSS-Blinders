@@ -1,0 +1,368 @@
+<html lang="en"><head>
+        <!-- Required meta tags -->
+    
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+        <link rel="SHORTCUT ICON" type="image/x-icon" href="/assets/frontend/images/fav.png">
+        <meta name="google-site-verification" content="IeMvuKhnpo8UNPqP9N26NHfVjpywr-ONCnCFSVH7oAE">
+		
+		<link rel="canonical" href="https://www.zentechnologies.com/search/search.php">
+		
+        <!-- Used for verifying ownership of a site. -->
+        <meta name="verify" content="">
+                <!-- Provide a short description of the page. -->
+        <meta name="description" content="Zen Technologies Ltd">
+        <!-- Provide a keywords of the page. -->
+        <meta name="keywords" content="Zen Technologies Ltd">
+        <title>Zen Technologies Ltd</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/assets/frontend/css/bootstrap.min.css">
+
+        <!--Common CSS-->
+        <link rel="stylesheet" href="/assets/frontend/css/style.css?20">
+
+        <!--Mobile CSS-->
+        <link rel="stylesheet" href="/assets/frontend/css/mobile.css?20">
+
+        <!--OWl Crowsel CSS-->
+        <link rel="stylesheet" href="/assets/frontend/css/owl.carousel.min.css">
+
+        <link rel="stylesheet" href="/assets/frontend/css/animate.min.css">
+        <!--FONT AWESOME-->
+        <link rel="stylesheet" href="/assets/frontend/css/font-awesome.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+		
+        <!--WEB FONTS-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+        <!--Jquery L-->
+        <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script src="/assets/frontend/js/jquery-3.3.1.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".search-toggle").click(function () {
+                    $(".search-input").focus();
+                });
+                $('.header').on('click', '.search-toggle', function (e) {
+                    var selector = $(this).data('selector');
+                    $(selector).toggleClass('show').find('.search-box').focus();
+                    e.preventDefault();
+                });
+
+                $('html').click(function () {
+
+                })
+
+                $('#footleft').click(function (e) {
+                    e.stopPropagation();
+                });
+
+
+
+                $(".mobilemenu").click(function () {
+                    $('.navArea').slideToggle('slow', function () {
+                        if ($('.navArea').is(':hidden'))
+                        {
+                            $("html").css("overflow", "auto");
+                        } else
+                        {
+                            $("html").css("overflow", "hidden");
+                        }
+                    });
+
+                });
+
+
+
+                /*		  
+                 $(window).scroll(function() {                    
+                 $(".navArea").slideUp();
+                 });
+                 */
+
+            });
+
+            /*
+             $(document).on("click", function(event){
+             var $trigger = $(".mobilemenu");
+             if($trigger !== event.target && !$trigger.has(event.target).length){
+             $(".navArea").slideUp();
+             }            
+             });
+             */
+
+
+        </script>
+<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5242799-1']);_gaq.push(['_trackPageview']);_gaq.push(['_trackPageLoadTime']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
+
+
+    </head>
+    <body>
+
+        <div class="w100 header " id="header">
+            <a class="mobilemenu mobile closeM"><span></span><span></span><span></span></a>
+            <div class="container posrel">
+                <div class="hedTop" id="sticker">
+                    <div class="logo" style="opacity: 1;">
+                        <a href="/"><img src="/assets/frontend/images/Zen-Technologies-Limited.png" alt="Zen Technologies Limited"></a>
+                    </div>
+                    <div class="navArea"><ul><li><a href="https://www.zentechnologies.com/zads-zen-anti-drone-counter-drone-system.php">Anti Drone</a></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Live ranges</a><ul class="dropdown-menu dropdownhover-right" style=""><li><a href="/lomah-smart-electronic-target-system.php">Smart Target System (ZEN STS®) - LOMAH<sup>™</sup></a></li><li><a href="/zen-multi-functional-target-system.php">Multi-Functional Target System (MFTS®)</a></li><li><a href="/ctsr-containerised-tubular-shooting-range.php">Containerised Tubular Shooting Range (CTSR)</a></li><li><a href="/cisr-containerised-indoor-shooting-range.php">Containerised Indoor Shooting Range (CISR)</a></li><li><a href="/zen-shoot-house-simulator.php">Shoot House for Live and Simulated Indoor Tactical Training</a></li><li><a href="/zen_hand_grenade_simulator.html">Hand Grenade Simulator (HE36S®)</a></li><li><a href="/zen-shootedge-advanced-corner-shot-simulator.php">ShootEdge® (CSWS)</a></li><li><a href="/zen-tank-targets.php">Tank targets</a></li><li><a href="/zen-master-control-station-for-live-firing-ranges.php">Master Control Station for Live-Firing Ranges (MCS)</a></li><li><a href="/tank-zeroing-system.php">Tank Zeroing System (TZS)</a></li><li><a href="/air-to-ground-firing-range-srcoring-system.php">Air-to-Ground Firing Range Scoring System</a></li></ul></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Live Simulation</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/armour-combat-training-system.php">Armour Combat Training System (ZEN ACTS<sup>™</sup>)</a></li><li><a href="/iadcs-integrated-air-defence-combat-simulator.php">Integrated Air Defence Combat Simulator (Zen IADCS)</a></li><li><a href="/tacsim-tactical-engagement-simulator.php">TacSim® Tactical Engagement Simulator</a></li><li><a href="/tacsim-indoor-tracking-system.php">TacSim® Indoor Tracking System</a></li></ul></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Virtual Simulation</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/zen_advanced_weapon_simulator.html">Advanced Weapons Simulator (AWeSim®)</a></li><li><a href="/zen_81mm_integrated_mortar_simulator.html">81mm Mortar Integrated Simulator (81mm MIS)</a></li><li><a href="/anti_tank_guided_missile_simulator.html">Anti-Tank Guided Missile Simulator (ATGM® Sim)</a></li><li><a href="/anti-aircraft-air-defence-simulator.php">Anti-Aircraft Air Defence Simulator (3ADS)</a></li><li><a href="/infantry-weapons-training-simulator.php">Infantry Weapons Training Simulator (IWTS®)</a></li><li><a href="/medium-machine-gun-simulator.php">Medium Machine Gun Simulator (MMG Sim)</a></li><li><a href="/automatic-grenade-launcher-simulator.php">Automatic Grenade Launcher Simulator (AGL Sim)</a></li><li><a href="/zen_artillery_forward_observer_simulator.html">Artillery Forward Observers Simulator (ArtyFOS)</a></li><li><a href="/zen-carrier-mortar-tracked-cmt-simulator.php">Carrier Mortar Tracked Simulator (CMT Sim)</a></li><li><a href="/zen-uav-training-simulator.html">UAV Mission Simulator (UAV Sim)</a></li><li><a href="/zen-helicopter-rotary-wing-simulator.php">Rotary Wing Simulator (RWS)</a></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Armoured Vehicles Simulator</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/zen_t90_tank_driving_simulator.html">Driving Simulator for T-90 Tank (T-90 DS)</a></li><li><a href="/zen_t90_crew_gunnery_simulator.html">Crew Gunnery Simulator for T-90 Tank (T-90 CGS)</a></li><li><a href="/zen_t72_tank_driving_simulator.html">Driving Simulator for T-72 Tank (T-72 DS)</a></li><li><a href="/zen_t72_crew_gunnery_simulator.html">Crew Gunnery Simulator for T-72 Tank (T-72 CGS)</a></li><li><a href="/zen_Iinfantry_combat_vehicle_driving_simulator.php">Infantry Combat Vehicle Driving Simulator (BMP II DS)</a></li><li><a href="/zen_bmpII_integrated_missile_simulator.html">BMP II Integrated Missile Simulator (BMP II IMS)</a></li></ul></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Driving Simulator</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/zen_driving_training_simulator.html">Driving Training Simulator (ZEN DTS®)</a></li><li><a href="/zen_basic_driving_simulator.html">Driving Simulator (DS)</a></li><li><a href="/zen-automated-driving-simulator.php">Automated Driving Simulator (ZEN ADS<sup>™</sup>)</a></li><li><a href="/zen-tatra-driving-simulator.php">Tatra Driving Simulator (TDS)</a></li><li><a href="/zen_bus_driving_simulator.html">Bus Driving Simulator (BusSim)</a></li><li><a href="/zen_driver_aptitude_testing_system.html">Driver Aptitude Testing System (ZEN DATS<sup>™</sup>)</a></li></ul></li></ul></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">CTC</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/zen-combat-training-centre-ctc.php">Combat Training Centre (CTC)</a></li><li><a href="/zen-wargaming-solutions.php">War Gaming Solutions (WGS)</a></li></ul></li><li class="dropdown dropdown-inline"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-animations="zoomIn zoomIn zoomIn zoomIn">Contact</a><ul class="dropdown-menu dropdownhover-right"><li><a href="/Contact-us">Contact us</a></li><li><a href="/support">Support</a></li></ul></li></ul></div>
+
+                     
+<div class="search-button">
+              <a href="#" class="search-toggle" data-selector="#header"><i class="fa fa-search"></i></a>
+            </div>
+					
+                </div>
+				
+			<form action="/search/search.php" method="get" class="search-box">
+                            <input type="text" name="query" id="query" size="40" value="" autocomplete="off" class="text search-input" placeholder="Type here to search...">
+                            <input type="hidden" name="search" value="1">
+                            <input type="submit" class="searchBtn" value="Search">
+                        </form>
+				
+            </div>
+			 
+			
+        </div>
+        <!--HEADER AREA END HERE-->
+		<div id="allcontent">
+	<div style="padding-top:40px;"> </div>
+	<form name="frm1" method="get" id="frm1" action="index.php" enctype="multipart/form-data">
+		<div class="w100">
+		<div class="container">
+			<div class="row">
+				<div class="col" id="home9">
+					<h2 class="pageTitle text-center" style="margin-top:40px;">Search List</h2>
+					<div class="greenDot"><div class="greenBgColor"></div><div class="greenBgColor"></div><div class="greenBgColor"></div></div>
+				</div>
+			</div>
+        <div class="row" style="margin-top:-50px;">      
+
+						
+			<div class="col-md-12 searchresults">
+			The seacrh <span style="color:red;"><q>abc/uvw"xyz'yxz<zxy< q=""></zxy<></q></span> did not match any documents			</div>
+						
+						<input type="hidden" name="cpage">
+			<input type="hidden" name="query" value="abc/uvw" xyz'yxz<zxy"="">
+			<input type="hidden" name="totalpages" value="1">
+			<input type="hidden" name="name" value="abc/uvw" xyz'yxz<zxy"="">
+		
+
+	
+	<script>
+		function showContent(val)
+		{
+			var serpDescId = "serpdesc_"+val;
+			var desc = document.getElementById(serpDescId).innerHTML
+			document.getElementById("popContent").innerHTML = desc;			
+		}
+	</script>	
+	<div class="an_popup" style="display: none;">
+		 <a class="fancybox-button fancybox-button--close close_an" title="Close"><svg viewBox="0 0 40 40"><path d="M10,10 L30,30 M30,10 L10,30"></path></svg>	</a>
+		<div class="an_popup_outside"></div>
+		<div class="an_popup_content">
+			<div id="popContent"></div>
+		</div>
+	</div>
+
+	<script language="javascript">function gotoPage(a,l,frm){frm = eval("document."+frm);frm.action=l;frm.cpage.value=a;frm.submit();}</script><!--________________________MASTER PAGE BOTTOM START______________________-->
+
+</div>
+
+<!--FOOTER AREA START HERE-->
+<div class="w100 position-relative" style="display:block;">
+
+    <div class="container-fluid">
+        <footer>
+            <div class="container">
+				<div class="row mobile footer_list">
+					<ul>
+						<li><a class="f_lar_txt" href="/about-us">About Us</a></li>
+						<li><a class="f_lar_txt" href="/awards">Awards</a></li>
+						<li><a class="f_lar_txt" href="/leader/board-of-directors">Board of Directors</a></li>
+						<li><a class="f_lar_txt" href="/CSR">CSR</a></li>
+						<li>
+							<a class="f_lar_txt" href="/products">Products</a></li>
+						<li>
+							<a class="f_lar_txt" href="/media-coverage">Media Coverage</a></li>
+						<li>
+							<a class="f_lar_txt" href="/Events">Events</a></li>
+						<li>
+							<a class="f_lar_txt" href="/investors">Investors</a></li>
+						<li>
+							<a class="f_lar_txt" href="/zen-careers">Careers</a></li>
+						<li>
+							<a class="f_lar_txt" href="/Contact-us">Contact Us</a></li>
+					</ul>
+				</div>
+                <div class="row">
+					<div class="col-md-9 desktop" style="padding-left:60px;">
+						<div class="col-md-3 col-sm-3">
+						<ul class="footer_list">
+						<li><a href="http://www.zentechnologies.com/about-us" class="f_lar_txt">About Us</a></li>
+						<li><a href="http://www.zentechnologies.com/awards">Awards</a></li>
+						<li><a href="http://www.zentechnologies.com/leader/board-of-directors">Board of Directors</a></li>
+						<li><a href="http://www.zentechnologies.com/CSR">CSR</a></li>
+						</ul>
+						</div>
+						
+						<div class="col-md-3 col-sm-3">
+						<ul class="footer_list">
+						<li><a href="http://www.zentechnologies.com/products" class="f_lar_txt">Products</a></li>
+						<li><a href="https://www.zentechnologies.com/products/awesim">AWeSim®</a></li>
+						<li><a href="https://www.zentechnologies.com/ctsr-containerised-tubular-shooting-range.php">CTSR</a></li>
+						<li><a href="https://www.zentechnologies.com/products/live-ranges">Live ranges</a></li>
+						<li><a href="https://www.zentechnologies.com/products/live-simulation">Live simulation</a></li>
+						<li><a href="https://www.zentechnologies.com/zen-shootedge-advanced-corner-shot-simulator.php">ShootEdge® (CornerShot)</a></li>
+						<li><a href="https://www.zentechnologies.com/products/virtual-simulation">Virtual simulation</a></li>
+						</ul>
+						</div>
+						<div class="col-md-3 col-sm-3">
+						<ul class="footer_list">
+						<li><a href="http://www.zentechnologies.com/newsroom" class="f_lar_txt">Newsroom</a></li>
+						<li><a href="http://www.zentechnologies.com/media-coverage">Media Coverage</a></li>
+						<li><a href="http://www.zentechnologies.com/Events">Events</a></li>
+						</ul>
+						</div>
+						<div class="col-md-3 col-sm-3">
+						<ul class="footer_list">
+						<li><a href="http://www.zentechnologies.com/investors" class="f_lar_txt">Investors</a></li>
+						<li><a href="http://www.zentechnologies.com/annual-reports">Annual Reports</a></li>
+						<li><a href="http://www.zentechnologies.com/corporate-governance">Corporate Governance</a></li>
+						<li><a href="http://www.zentechnologies.com/investor-information">Investor Information</a></li>
+						</ul>
+						</div>
+						
+					
+					</div>
+					<div class="col-sm-3 col-md-3 fmobile">
+
+						<div class="w100 careermob">
+							<a class="f_lar_txt desktop" href="/zen-careers">Careers</a></div>
+						<div class="tollfree">
+							<span>TOLL FREE NUMBER</span><br>
+							<a href="tel:1-800-425-4094">1-800-425-4094</a></div>
+						<div class="tollfree">
+							<span>SEND AN EMAIL:</span><br>
+							<a href="mailto:info@zentechnologies.com">info@zentechnologies.com</a></div>
+						<div class="social">
+							<span>Follow us</span>
+							<ul>
+								 <li><a href="https://www.facebook.com/ZenTechnologies" target="_blank"><i class="fa fa-facebook"></i></a></li>
+														<li><a href="https://twitter.com/zentechnologies" target="_blank"><i class="fa fa-twitter"></i></a></li>
+														<li><a href="https://www.youtube.com/user/zentechnologiesltd" target="_blank"><i class="fa fa-youtube"></i></a></li>
+							</ul>
+						</div>
+	
+                    </div>
+                </div>
+				
+			
+				
+            </div>
+        </footer>
+        <div class="w100">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-sm-6 col-md-6 text-center">
+                        <p>Copyright © 2021 Zen Technologies Limited, All Rights Reserved.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-6 f_tab"> <a href="/page/privacy-policy">Privacy Policies</a>  <a href="/sitemap">Sitemap </a>  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FOOTER AREA START HERE-->
+
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+/*
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5b751d07afc2c34e96e79edb/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+	*/
+</script>
+<!--End of Tawk.to Script-->
+
+
+<!--JS HERE-->
+
+<!--OWL Carousel-->
+<script src="/assets/frontend/js/plugin.js"></script>
+
+<!--OWL Carousel-->
+<!--<script src="/assets/frontend/js/owl.carousel.min.js" ></script>-->
+
+<!--COMMON JS-->
+<script src="/assets/frontend/js/common.js?52"></script>
+
+<!--BOOTSTRAP JS-->
+<!--<script src="/assets/frontend/js/bootstrap.min.js" ></script>-->
+
+<!--MOUSEWHEEL JS-->
+<!--<script src="/assets/frontend/js/jquery.mousewheel.js"></script>-->
+
+<!--SCROLLREVEAL JS-->
+<!--<script src="/assets/frontend/js/scrollreveal.min.js"></script>-->
+
+<!--NICE SCROLL JS-->
+<!--<script src="/assets/frontend/js/jquery.nicescroll.min.js"></script>-->
+
+<!--Lightbox-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //var nice = $("html").niceScroll();  // The document page (body)
+        $("#newsscroll").niceScroll({cursorborder: "", cursorcolor: "#fff", boxzoom: true}); // First scrollable DIV
+        /*setTimeout(function () {
+            var url = '';
+            if ($('#menu_sidebar').html() == "...") {
+                var cont = $('.navArea ul').children('li').eq(5).children('ul').html();
+                cont = cont.replace(/dropdown dropdown-inline/g, 'sidedrop');
+                $('#menu_sidebar').html(cont);
+            }
+        }, 100);*/
+    });
+</script>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "Organization",
+   "url": "http://www.zentechnologies.com",
+   "logo": "http://www.zentechnologies.com/images/Zen-Technologies-Limited.jpg",
+   "name" : "Zen Technologies",
+   "founder": "Ashok Atluri",
+   "foundingDate": "1993",
+    "sameAs" : [ "https://www.facebook.com/ZenTechnologies",
+    "https://twitter.com/zentechnologies",
+    "https://www.youtube.com/user/zentechnologiesltd"],
+  "contactPoint" : [
+  { "@type" : "ContactPoint",
+      "telephone" : "+9140 2381 2894",
+      "contactType" : "customer service"
+    },{
+    "@type" : "ContactPoint",
+    "telephone" : "+911-800-425-4094",
+    "contactType" : "customer service",
+    "contactOption" : [
+      "TollFree"
+    ]
+  }]
+}
+</script>
+
+
+</div></div></form></div></body></html>

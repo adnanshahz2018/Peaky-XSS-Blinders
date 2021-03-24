@@ -1,21 +1,35 @@
+
+# python imports
 from urllib.request import urlopen
 import urllib.response
+from time import sleep
 import urllib.request
 import urllib.parse
-import requests 
-import urllib3 
-import re
-from bs4 import BeautifulSoup
+import re, requests 
+
+# local imports
+from Factory import Factory
 
 class web_request:  
     url = ''
     form_method = ''
+    fact = Factory.get_instance()
 
-    def initialize(self,url,method):
+    def initialize(self, url, method='get'):
         self.url = url 
         self.form_method = method.lower()
-        
-    def get_source(self):    
+
+    def get_source(self):
+        try:
+            browser = self.fact.get_browser()
+            browser.get(self.url)
+            return browser.page_source
+        except: 
+            text = self.fact.get_specific_item('WriteTextFile')
+            text = text.get_object()
+            text.write('\n\tPage did not **LOAD** Properly\n')
+
+    def dget_source(self):    
         s1 = self.open_request()
         s2 = self.openurl()
         if len(s1) > len(s2): source = s1 
@@ -74,12 +88,12 @@ if __name__ == "__main__":
     Web = web_request(link, 'get')
     # resp = Web.get_source()
     pattern = re.compile(r'<(?!a)(?!z)(?!link)(?!frame)(?!script)\w{1,10}[~…*\s[@\*!\|$_,}+*\"*\\#*{*\s^*?\[\]\'\*(*)*\/*.*\w*:*=*&*;*\-*%*\d*\u00a1-\u0104\u4e00-\u9fff\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]*[xX][yY][zZ][~…@\*!\|$_,}+*\"*\\#*{*\s^*?\[\]\'*(*)*<\/*.*\w*:*=*&*;*\-*%*\d*\u00a1-\u0104\u4e00-\u9fff\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]*\/?>')
-
     resp = requests.get(link)
     resp = resp.text
     print(resp)
-
     value = pattern.findall(resp)
     # print('value: \n', value)
+
+
     
     print('{WebRequest}')

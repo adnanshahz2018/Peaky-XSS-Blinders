@@ -43,7 +43,7 @@ class regular_expression:
     def RegExpHtml(self):
         # pattern = re.compile(r'<\/?(?!script)(?!z)\w{1,10}[\u00a1-\u0104\u4e00-\u9fff\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf\*\|\_\<\!\"\#\\,\(\)\s\'\/\›\$\.\w\+\?\:\=\&\;\-\%\d]*>[\u00a1-\u0104\u4e00-\u9fff\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf\*\|\_\<\!\"\#\\,\(\)\s\'\/\›\$\.\w\+\?\:\=\&\;\-\%\d]*[xX][yY][zZ][\u00a1-\u0104\u4e00-\u9fff\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf\*\|\_\<\!\"\#\\,\(\)\s\'\/\›\$\.\w\+\?\:\=\&\;\-\%\d“”]*<\/?(?!z)\w{1,10}\>?')
 
-        pattern = re.compile(r'<\/?(?!script)(?!z)\w{1,10}' + self.h + r'>' +  self.h + r'[xX][yY][zZ]' + self.h + r'<\/?(?!z)\w{1,10}\>?')
+        pattern = re.compile(r'<\/?(?!script)(?!z)\w{1,10}' + self.h + r'>' +  self.h + r'[xX][yY][zZ]' + self.h + r'<?\/?(?!z)\w{1,10}\>?')
         values = pattern.findall(self.pagesource)
         return values
 
