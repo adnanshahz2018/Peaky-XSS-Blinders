@@ -1,6 +1,7 @@
 
 # python imports
 from selenium import webdriver
+from time import sleep
 
 
 class Factory:
@@ -40,6 +41,7 @@ class Factory:
             self.browser = webdriver.Chrome('chromedriver.exe') 
             self.browser.set_window_position(0,0)
             self.browser.maximize_window()
+            sleep(3)
             return self.browser
         else:
             return self.browser

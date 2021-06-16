@@ -25,9 +25,11 @@ class web_request:
             browser.get(self.url)
             return browser.page_source
         except: 
-            text = self.fact.get_specific_item('WriteTextFile')
-            text = text.get_object()
-            text.write('\n\tPage did not **LOAD** Properly\n')
+            # text = self.fact.get_specific_item('WriteTextFile')
+            # text = text.get_object()
+            # text.write('\n\tPage did not **LOAD** Properly\n')
+            return self.dget_source()
+            pass
 
     def dget_source(self):    
         s1 = self.open_request()
